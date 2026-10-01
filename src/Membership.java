@@ -7,11 +7,11 @@ public class Membership {
         this.memberID = memberID;
     }
 
-    public String getName() {
+    public String getMemberName() {
         return memberName;
     }
 
-    public int getId() {
+    public int getMemberID() {
         return memberID;
     }
 
