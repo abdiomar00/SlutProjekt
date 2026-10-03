@@ -10,7 +10,7 @@ public class PremiumMembership extends Membership implements Bookable{
 
     @Override
     public String getmembershipType(){
-        return "Standard";
+        return "Premium";
     }
 
     @Override
