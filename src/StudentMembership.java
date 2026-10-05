@@ -2,6 +2,9 @@ public class StudentMembership extends Membership{
     private String schoolName;
 
     public StudentMembership(String memberName, int memberID, String schoolName) {
+        if (schoolName == null || schoolName.trim().isEmpty()) {
+            throw new IllegalArgumentException("School name cannot be empty");
+        }
         super(memberName, memberID);
         this.schoolName = schoolName;
     }
