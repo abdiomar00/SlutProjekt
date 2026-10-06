@@ -116,7 +116,12 @@ public class Gymsystem {
 
                 membership = new StudentMembership("Charlie EK", 1001, "Malmö University");
 
+            } else {
+                System.out.println("Invalid membership type. Try again.");
+                return;
             }
+            memberships.add(membership);
+            System.out.println("Membership added successfully!");
 
         }catch (NumberFormatException e){
 
