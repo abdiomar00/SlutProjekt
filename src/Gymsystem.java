@@ -87,24 +87,29 @@ public class Gymsystem {
 
     }
 
+    //REMOVE
     void removeMembership(){
         try {
         }catch (NumberFormatException e){
         }
     }
 
+    //SEARCH
     void searchMembership(){
 
     }
 
+    //DISPLAY ALL
     void displayAllMembership(){
 
     }
 
+    //STATISTICS
     void showStatistics() {
 
     }
 
+    //BOOK TRAINING
     void bookTraining(){
 
     }
