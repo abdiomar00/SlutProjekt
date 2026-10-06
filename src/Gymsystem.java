@@ -104,6 +104,17 @@ public class Gymsystem {
                 membership = new StandardMembership("Alice", 1001, 2);
 
             } else if (membershipType == 2) {
+                System.out.println("Does the member have a personal trainer? (yes/no)");
+                String answer = scanner.nextLine().trim();
+
+                boolean personalTraining = answer.equalsIgnoreCase("Yes");
+                membership = new PremiumMembership("John",2003,3, "Coach PT_kim");
+
+            }  else if (membershipType == 3) {
+                System.out.println("Enter School Name: ");
+                String schoolName = scanner.nextLine().trim();
+
+                membership = new StudentMembership("Charlie EK", 1001, "Malmö University");
 
             }
 
