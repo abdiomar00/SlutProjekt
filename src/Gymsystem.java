@@ -80,6 +80,32 @@ public class Gymsystem {
 
     void addMembership(){
         try {
+            System.out.println("Enter Membership Name: ");
+            String membershipName = scanner.nextLine().trim();
+
+            System.out.println("Enter Membership ID: ");
+            int membershipID = Integer.parseInt(scanner.nextLine().trim());
+
+            System.out.println();
+            System.out.println("Choose Membership Type: ");
+            System.out.println("1 Standard");
+            System.out.println("2 Premium");
+            System.out.println("3 Student");
+
+            System.out.println("Choose type");
+            int membershipType = Integer.parseInt(scanner.nextLine().trim());
+
+            Membership membership;
+            if (membershipType == 1) {
+                System.out.println("Does the member have group training? (yes/no)");
+                String answer = scanner.nextLine().trim();
+
+                boolean groupTraining = answer.equalsIgnoreCase("Yes");
+                membership = new StandardMembership("Alice", 1001, 2);
+
+            } else if (membershipType == 2) {
+
+            }
 
         }catch (NumberFormatException e){
 
