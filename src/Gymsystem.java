@@ -136,7 +136,25 @@ public class Gymsystem {
     //REMOVE
     void removeMembership(){
         try {
+            System.out.println("Enter Membership ID to remove: ");
+            int membershipID = Integer.parseInt(scanner.nextLine().trim());
+
+            boolean removed = false;
+            for (int i = 0; i < memberships.size(); i++) {
+                if (memberships.get(i).getMemberID() == membershipID) {
+                    memberships.remove(i);
+                    removed = true;
+                    break;
+                }
+            }
+            if (removed) {
+                System.out.println("Membership removed successfully!");
+            } else {
+                System.out.println("No member with that ID was found!");
+            }
+
         }catch (NumberFormatException e){
+            System.out.println("Invalid number. Please enter a valid number.");
         }
     }
 
