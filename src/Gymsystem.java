@@ -160,7 +160,24 @@ public class Gymsystem {
 
     //SEARCH
     void searchMembership(){
+        System.out.println("Enter name to search for: ");
+        String searchText = scanner.nextLine().trim();
 
+        if (searchText.isEmpty()) {
+            System.out.println("Search text cannot be empty!");
+            return;
+        }
+        boolean found = false;
+        for (Membership membership : memberships) {
+            if (membership.getMemberName().toLowerCase().contains(searchText.toLowerCase())) {
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Membership not found!");
+
+        }
     }
 
     //DISPLAY ALL
