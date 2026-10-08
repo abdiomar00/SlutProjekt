@@ -182,7 +182,16 @@ public class Gymsystem {
 
     //DISPLAY ALL
     void displayAllMembership(){
+        if (memberships.isEmpty()) {
+            System.out.println("No memberships found!");
+            return;
+        }
 
+        for (Membership membership : memberships) {
+            System.out.println("_________");
+            membership.getDescribtion();
+        }
+        System.out.println("_________");
     }
 
     //STATISTICS

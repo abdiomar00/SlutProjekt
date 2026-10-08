@@ -17,7 +17,7 @@ public class PremiumMembership extends Membership implements Bookable{
     }
 
     @Override
-    public void displayMembership(){
+    public void getDescribtion() {
         System.out.println("[" + getmembershipType() + "] ID: " + getMemberID() + " - " + getMemberName() +
                 " (Booked classes: " + bookedClass + "PT" + personalTrainerName + ")");
     }

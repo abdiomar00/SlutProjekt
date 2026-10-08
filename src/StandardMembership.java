@@ -12,8 +12,7 @@ public class StandardMembership extends Membership implements Bookable{
         return "Standard";
     }
 
-    @Override
-    public void displayMembership(){
+    public void getDescribtion(){
         System.out.println("[" + getmembershipType() + "] ID: " + getMemberID() + " - " + getMemberName() +
                 " (Booked classes: " + bookedClass + " " + MAX_bookedClass + ")");
     }

@@ -15,7 +15,7 @@ public class StudentMembership extends Membership{
     }
 
     @Override
-    public void displayMembership(){
+    public void getDescribtion() {
         System.out.println("[" + getmembershipType() + "] ID: " + getMemberID() + " - " + getMemberName() +
                 " (School: " + schoolName + ") - Gym Access Only");
     }

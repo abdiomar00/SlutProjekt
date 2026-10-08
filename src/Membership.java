@@ -25,7 +25,7 @@ public class Membership {
     public String getmembershipType() {
         return "membership";
     }
-    public void displayMembership() {
+    public void getDescribtion() {
         System.out.println(memberName + " " + memberID);
     }
 
