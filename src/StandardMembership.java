@@ -1,10 +1,13 @@
 public class StandardMembership extends Membership implements Bookable{
-    private int bookedClass = 0;
-    private final int MAX_bookedClass = 3;
+    private boolean groupTraining;
 
-    public StandardMembership(String memberName, int memberID, int bookedClass) {
+
+    public StandardMembership(String memberName, int memberID, boolean groupTraining) {
         super(memberName, memberID);
-        this.bookedClass = bookedClass;
+        this.groupTraining = groupTraining;
+    }
+    public boolean hasGroupTraining() {
+        return groupTraining;
     }
 
     @Override
@@ -12,26 +15,24 @@ public class StandardMembership extends Membership implements Bookable{
         return "Standard";
     }
 
-    public void getDescribtion(){
-        System.out.println("[" + getmembershipType() + "] ID: " + getMemberID() + " - " + getMemberName() +
-                " (Booked classes: " + bookedClass + " " + MAX_bookedClass + ")");
+    @Override
+    public String getDescription(){
+         if (groupTraining){
+             return "Standard membership with group training. ";
+         }
+         return "Standard membership without group training. ";
     }
 
     @Override
-    public void bookGroupClass(){
-        if (bookedClass >= MAX_bookedClass){
-            throw new IllegalStateException("Standard members cannot book more than " + MAX_bookedClass + " classes.");
+    public void bookTraining(){
+        if (!groupTraining){
+            throw new IllegalStateException("This member does not have group training.");
         }
-        bookedClass++;
+        System.out.println(getMemberName() + "booked group training.");
     }
 
     @Override
-    public void cancelBooking(){
-        if (bookedClass > 0) bookedClass--;
-    }
-
-    @Override
-    public int getBookedClassesCount(){
-        return bookedClass;
+    public boolean canBookTraining(){
+        return groupTraining;
     }
 }

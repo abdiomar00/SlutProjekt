@@ -1,14 +1,16 @@
 public class PremiumMembership extends Membership implements Bookable{
-    private int bookedClass;
-    private String personalTrainerName;
+    private boolean personalTrainer;
 
-    public PremiumMembership(String memberName, int memberID, int bookedClass, String personalTrainerName) {
+    public PremiumMembership(String memberName, int memberID, int bookedClass, boolean personalTrainer) {
         if (memberName == null || memberName.trim().isEmpty()) {
             throw new IllegalArgumentException("Member name cannot be empty");
         }
         super(memberName, memberID);
-        this.bookedClass = bookedClass;
-        this.personalTrainerName = personalTrainerName;
+        this.personalTrainer = personalTrainer;
+    }
+
+    public boolean hasPersonalTrainer() {
+        return personalTrainer;
     }
 
     @Override
@@ -17,22 +19,24 @@ public class PremiumMembership extends Membership implements Bookable{
     }
 
     @Override
-    public void getDescribtion() {
-        System.out.println("[" + getmembershipType() + "] ID: " + getMemberID() + " - " + getMemberName() +
-                " (Booked classes: " + bookedClass + "PT" + personalTrainerName + ")");
+    public String getDescription() {
+         if (personalTrainer){
+             return "Premium membership with personal trainer";
+         }
+         return "Premium membership without personal trainer";
     }
 
     @Override
-    public void bookGroupClass(){
-        bookedClass++;
+    public void bookTraining(){
+        if (!personalTrainer){
+            throw new IllegalStateException("This member does not have a personal trainer");
+        }
+        System.out.println(getMemberName() + "booked a personal trainer session.");
     }
 
     @Override
-    public void cancelBooking(){
-        if (bookedClass > 0) bookedClass--;
+    public boolean canBookTraining(){
+        return personalTrainer;
     }
-    @Override
-    public int getBookedClassesCount(){
-        return bookedClass;
-    }
+
 }

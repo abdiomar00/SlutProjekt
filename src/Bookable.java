@@ -1,5 +1,4 @@
 public interface Bookable {
-    void bookGroupClass() throws IllegalStateException;
-    void cancelBooking();
-    int getBookedClassesCount();
+    void bookTraining();
+    boolean canBookTraining();
 }

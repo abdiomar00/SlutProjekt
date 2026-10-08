@@ -23,10 +23,15 @@ public class Membership {
     }
 
     public String getmembershipType() {
-        return "membership";
+        return " General Membership";
     }
-    public void getDescribtion() {
-        System.out.println(memberName + " " + memberID);
+    public String getDescription() {
+        return "General gym membership";
+    }
+
+    @Override
+    public String toString() {
+        return "ID: "  + memberID + " | Name: " + memberName + " | Ty: " + getmembershipType();
     }
 
 

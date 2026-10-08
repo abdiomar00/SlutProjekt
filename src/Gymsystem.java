@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.SortedMap;
 
 public class Gymsystem {
     private ArrayList<Membership>  memberships;
@@ -102,20 +101,20 @@ public class Gymsystem {
                 String answer = scanner.nextLine().trim();
 
                 boolean groupTraining = answer.equalsIgnoreCase("Yes");
-                membership = new StandardMembership("Alice", 1001, 2);
+                membership = new StandardMembership("Alice", 1001, true);
 
             } else if (membershipType == 2) {
                 System.out.println("Does the member have a personal trainer? (yes/no)");
                 String answer = scanner.nextLine().trim();
 
                 boolean personalTraining = answer.equalsIgnoreCase("Yes");
-                membership = new PremiumMembership("John",2003,3, "Coach PT_kim");
+                membership = new PremiumMembership("John",2003,3, true);
 
             }  else if (membershipType == 3) {
                 System.out.println("Enter School Name: ");
                 String schoolName = scanner.nextLine().trim();
 
-                membership = new StudentMembership("Charlie EK", 1001, "Malmö University");
+                membership = new StudentMembership("Charlie EK", 1005, "Malmö University");
 
             } else {
                 System.out.println("Invalid membership type. Try again.");
@@ -189,7 +188,7 @@ public class Gymsystem {
 
         for (Membership membership : memberships) {
             System.out.println("_________");
-            membership.getDescribtion();
+            membership.getDescription();
         }
         System.out.println("_________");
     }
@@ -209,18 +208,59 @@ public class Gymsystem {
                 Student++;
             }
 
+            if (membership instanceof Bookable) {
+                Bookable training = (Bookable) membership;
+                if (training.canBookTraining()) {
+                    Bookable++;
+                }
+            }
+
         }
         System.out.println();
         System.out.println("Standard: " + Standard);
         System.out.println("Premium: " + Premium);
         System.out.println("Student: " + Student);
-        System.out.println("Members able to  book grouptraining: " + Bookable);
+        System.out.println("Members able to  book training: " + Bookable);
         System.out.println();
     }
 
     //BOOK TRAINING
     void bookTraining(){
+        try {
+            System.out.println("Enter Member ID: ");
+            int id = Integer.parseInt(scanner.nextLine().trim());
+            
+            Membership membership = null;
+            for (Membership member : memberships) {
+                if (member.getMemberID() == id) {
+                    membership = member;
+                    break;
+                }
+            }
 
+            if (membership == null) {
+                System.out.println("Membership not found!");
+                return;
+            }
+            
+            if (membership instanceof Bookable){
+                Bookable bookable = (Bookable) membership;
+                if (bookable.canBookTraining()){
+                    bookable.bookTraining();
+                }else {
+                    System.out.println("This member cannot book group class!");
+                }
+
+            }else {
+                System.out.println("This membership type cannot book group class!");
+            }
+            
+        }catch (NumberFormatException e){
+            System.out.println("Invalid number ID. ");
+            
+        }catch (IllegalStateException e){
+            System.out.println("Booking error: " + e.getMessage());
+        }
     }
 
 

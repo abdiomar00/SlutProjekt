@@ -9,14 +9,18 @@ public class StudentMembership extends Membership{
         this.schoolName = schoolName;
     }
 
+    public String getSchoolName() {
+        return schoolName;
+    }
+
     @Override
     public String getmembershipType(){
         return "Student";
     }
 
     @Override
-    public void getDescribtion() {
-        System.out.println("[" + getmembershipType() + "] ID: " + getMemberID() + " - " + getMemberName() +
-                " (School: " + schoolName + ") - Gym Access Only");
+    public String getDescription() {
+        return "Student membership at " + schoolName + ".";
     }
+
 }
