@@ -9,7 +9,7 @@ Gym medlemskap där man har koll på vilka kunder har vilket medlemskap och vilk
 
 - Namn: Gym medlemssytem.
 - Gemensamma fält: name, id number.
-- Gemensamma metoder: Addmember(), removemember(), search(), bookclass().
+- Gemensamma metoder: Addmember(), removemember(), searchmember(), bookclass().
 
 ## Subklasser (minst tre)
 
@@ -26,7 +26,7 @@ Gym medlemskap där man har koll på vilka kunder har vilket medlemskap och vilk
 ## Meny
 - Addmember()
 - Removemember()
-- Search()
+- Searchmember()
 - Displayallmembers()
 - Showstatistics()
 - Bookclass()
