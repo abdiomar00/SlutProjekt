@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.SortedMap;
 
 public class Gymsystem {
     private ArrayList<Membership>  memberships;
@@ -124,7 +125,10 @@ public class Gymsystem {
             System.out.println("Membership added successfully!");
 
         }catch (NumberFormatException e){
+            System.out.println("Invalid number. Please enter a valid number.");
 
+        } catch (IllegalArgumentException e) {
+            System.out.println("Could not create Membership: " + e.getMessage());
         }
 
     }

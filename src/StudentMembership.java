@@ -11,7 +11,7 @@ public class StudentMembership extends Membership{
 
     @Override
     public String getmembershipType(){
-        return "Standard";
+        return "Student";
     }
 
     @Override
