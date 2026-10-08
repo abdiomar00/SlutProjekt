@@ -9,13 +9,13 @@ Gym medlemskap där man har koll på vilka kunder har vilket medlemskap och vilk
 
 - Namn: Gym medlemssytem.
 - Gemensamma fält: name, id number.
-- Gemensamma metoder: showInfo(), register(), search(), bookclass().
+- Gemensamma metoder: Addmember(), removemember(), search(), bookclass().
 
 ## Subklasser (minst tre)
 
-1. Standard medlemskap — override - register() för att registrera medlemmen.
+1. Standard medlemskap — override - addmember() för att registrera medlemmen.
 2. Premium medlemskap — override - bookclass() för att medlemmen kan boka classes.
-3. Student medlemskap — override - showInfo() för att visa studenten har studenkort.
+3. Student medlemskap — override - searchmember() för att visa studenten har studenkort.
 
 ## Interface
 
@@ -24,9 +24,11 @@ Gym medlemskap där man har koll på vilka kunder har vilket medlemskap och vilk
 - Implementeras av (minst två subklasser): Standard, premium.
 
 ## Meny
-- ShowInfo()
-- Register()
+- Addmember()
+- Removemember()
 - Search()
+- Displayallmembers()
+- Showstatistics()
 - Bookclass()
 - Exit()
 
