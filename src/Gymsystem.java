@@ -196,7 +196,26 @@ public class Gymsystem {
 
     //STATISTICS
     void showStatistics() {
+        int Standard = 0;
+        int Premium = 0;
+        int Student = 0;
+        int Bookable = 0;
+        for (Membership membership : memberships) {
+            if (membership.getmembershipType().equalsIgnoreCase("Standard")) {
+                Standard++;
+            } else if (membership.getmembershipType().equalsIgnoreCase("Premium")) {
+                Premium++;
+            }  else if (membership.getmembershipType().equalsIgnoreCase("Student")) {
+                Student++;
+            }
 
+        }
+        System.out.println();
+        System.out.println("Standard: " + Standard);
+        System.out.println("Premium: " + Premium);
+        System.out.println("Student: " + Student);
+        System.out.println("Members able to  book grouptraining: " + Bookable);
+        System.out.println();
     }
 
     //BOOK TRAINING
