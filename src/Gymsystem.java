@@ -9,6 +9,10 @@ public class Gymsystem {
         memberships = new ArrayList <>();
         scanner = new Scanner(System.in);
 
+        memberships.add(new StandardMembership("Alice", 1001, true));
+        memberships.add(new PremiumMembership("John",2003,3, true));
+        memberships.add(new StudentMembership("Charlie EK", 1005, "Malmö University"));
+        memberships.add(new StandardMembership("James", 1006, false));
     }
 
     public void start(){
@@ -169,6 +173,7 @@ public class Gymsystem {
         boolean found = false;
         for (Membership membership : memberships) {
             if (membership.getMemberName().toLowerCase().contains(searchText.toLowerCase())) {
+                System.out.println(membership + " | " + membership.getDescription());
                 found = true;
             }
         }
@@ -188,7 +193,7 @@ public class Gymsystem {
 
         for (Membership membership : memberships) {
             System.out.println("_________");
-            membership.getDescription();
+            System.out.println(membership.getDescription());
         }
         System.out.println("_________");
     }
@@ -262,9 +267,5 @@ public class Gymsystem {
             System.out.println("Booking error: " + e.getMessage());
         }
     }
-
-
-
-
 
 }

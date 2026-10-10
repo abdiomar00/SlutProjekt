@@ -31,7 +31,7 @@ public class Membership {
 
     @Override
     public String toString() {
-        return "ID: "  + memberID + " | Name: " + memberName + " | Ty: " + getmembershipType();
+        return "ID: "  + memberID + " | Name: " + memberName + " | Typ: " + getmembershipType();
     }
 
 
