@@ -15,7 +15,7 @@ Gym medlemskap där man har koll på vilka kunder har vilket medlemskap och vilk
 
 1. Standard medlemskap — override - addmember() för att registrera medlemmen.
 2. Premium medlemskap — override - bookclass() för att medlemmen kan boka classes.
-3. Student medlemskap — override - searchmember() för att visa studenten har studenkort.
+3. Student medlemskap — override - searchmember() för att visa studenten och vilken hen går.
 
 ## Interface
 
@@ -38,9 +38,10 @@ Lista minst fyra åtgärder kopplade till samlingen (t.ex. lägga till, ta bort,
 
 Minst två konkreta situationer i just ert program som kan gå fel och som ni behöver hantera (inte generella exempel).
 
-För att man ska inte överboka klassen mer än det tar.
-För att barn ska inte köpa student medlemskap utan student kort.
+Man ska kan inte lägga till eller tar bort medlemmar utan medlem id .
+För att medlemmen ska inte boka group training om den inte tillhör till den typen som kan boka group training.
 
 ## Motivering (fylls i senare i veckan)
 
 När ni kommit igång och gjort några ändringar: skriv kort varför strukturen ser ut som den gör, och om ni övervägde ett annat sätt att lösa det på. Detta behöver inte fyllas i redan i första commiten.
+Jag ska skapat en till class för att hantera alla metoder och jag ville inte ha för mycket information i main.
