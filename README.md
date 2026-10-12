@@ -43,5 +43,4 @@ För att medlemmen ska inte boka group training om den inte tillhör till den ty
 
 ## Motivering (fylls i senare i veckan)
 
-När ni kommit igång och gjort några ändringar: skriv kort varför strukturen ser ut som den gör, och om ni övervägde ett annat sätt att lösa det på. Detta behöver inte fyllas i redan i första commiten.
 Jag ska skapat en till class för att hantera alla metoder och jag ville inte ha för mycket information i main.
