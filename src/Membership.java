@@ -6,6 +6,9 @@ public class Membership {
         if (memberName == null || memberName.trim().isEmpty()) {
             throw new IllegalArgumentException("Member name cannot be null or empty");
         }
+        if (memberName.matches(".*\\d.*")) {
+            throw new IllegalArgumentException("Member name cannot contain numbers");
+        }
         if (memberID <= 1000 || memberID > 9999) {
             throw new IllegalArgumentException("Member ID must be a 4-digit number (1001-9999)");
         }

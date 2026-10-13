@@ -105,20 +105,20 @@ public class Gymsystem {
                 String answer = scanner.nextLine().trim();
 
                 boolean groupTraining = answer.equalsIgnoreCase("Yes");
-                membership = new StandardMembership("Alice", 1001, true);
+                membership = new StandardMembership(membershipName, membershipID, groupTraining);
 
             } else if (membershipType == 2) {
                 System.out.println("Does the member have a personal trainer? (yes/no)");
                 String answer = scanner.nextLine().trim();
 
                 boolean personalTraining = answer.equalsIgnoreCase("Yes");
-                membership = new PremiumMembership("John",2003,3, true);
+                membership = new PremiumMembership(membershipName, membershipID, 3, personalTraining);
 
             }  else if (membershipType == 3) {
                 System.out.println("Enter School Name: ");
                 String schoolName = scanner.nextLine().trim();
 
-                membership = new StudentMembership("Charlie EK", 1005, "Malmö University");
+                membership = new StudentMembership(membershipName, membershipID, schoolName);
 
             } else {
                 System.out.println("Invalid membership type. Try again.");

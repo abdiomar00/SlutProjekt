@@ -2,9 +2,6 @@ public class PremiumMembership extends Membership implements Bookable{
     private boolean personalTrainer;
 
     public PremiumMembership(String memberName, int memberID, int bookedClass, boolean personalTrainer) {
-        if (memberName == null || memberName.trim().isEmpty()) {
-            throw new IllegalArgumentException("Member name cannot be empty");
-        }
         super(memberName, memberID);
         this.personalTrainer = personalTrainer;
     }
