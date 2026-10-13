@@ -43,4 +43,4 @@ För att medlemmen ska inte boka group training om den inte tillhör till den ty
 
 ## Motivering (fylls i senare i veckan)
 
-Jag ska skapat en till class för att hantera alla metoder och jag ville inte ha för mycket information i main.
+Jag har skapat en till class för att hantera alla metoder och jag ville inte ha för mycket information i main.
